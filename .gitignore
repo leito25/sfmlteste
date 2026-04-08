@@ -14,7 +14,6 @@ sfml3-app
 *.o.d
 
 # IDE and editor files
-.vscode/
 .idea/
 *.swp
 *.swo
