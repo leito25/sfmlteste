@@ -1,0 +1,38 @@
+# Build directories
+build/
+out/
+
+# Compiled executables
+sfml3-app
+*.exe
+*.out
+*.app
+
+# Object files
+*.o
+*.obj
+*.o.d
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# CMake generated files
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+compile_commands.json
+
+# Dependency directories
+_deps/
+
+# Debug files
+*.dSYM/
+
+# Sixth sense (if applicable)
+.sixth/
