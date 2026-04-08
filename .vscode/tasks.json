@@ -2,30 +2,16 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "Build and Run (Debug)",
-            "type": "shell",
-            "command": "${env:OS}" ,
-            "args": [],
-            "options": {
-                "cwd": "${workspaceFolder}"
-            },
-            "problemMatcher": ["$gcc"],
-            "detail": "Dispatch to platform-specific debug run script"
-        },
-        {
             "label": "Build and Run (Debug, macOS)",
             "type": "shell",
             "command": "./run.sh",
-            "args": ["debug"],lear
+            "args": ["debug"],
             "group": {
                 "kind": "build",
                 "isDefault": true
             },
             "options": {
-                "cwd": "${workspaceFolder}",
-                "shell": {
-                    "executable": "/bin/bash"
-                }
+                "cwd": "${workspaceFolder}"
             },
             "problemMatcher": ["$gcc"],
             "detail": "Build and run the application in debug mode on macOS"
@@ -35,10 +21,7 @@
             "type": "shell",
             "command": "cmd.exe",
             "args": ["/c", "cmake -S . -B build -DCMAKE_BUILD_TYPE=Debug && cmake --build build --config Debug && build\\sfml3-app.exe"],
-            "group": {
-                "kind": "build",
-                "isDefault": false
-            },
+            "group": "build",
             "options": {
                 "cwd": "${workspaceFolder}"
             },
@@ -52,10 +35,7 @@
             "args": ["release"],
             "group": "build",
             "options": {
-                "cwd": "${workspaceFolder}",
-                "shell": {
-                    "executable": "/bin/bash"
-                }
+                "cwd": "${workspaceFolder}"
             },
             "problemMatcher": ["$gcc"],
             "detail": "Build and run the application in release mode on macOS"
