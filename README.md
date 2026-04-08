@@ -12,51 +12,76 @@ A simple SFML 3 application demonstrating the basics of creating a window and dr
 
 - **macOS** (tested on Apple Silicon)
 - **CMake** 3.16 or higher
-- **SFML 3** installed via Homebrew
 - **C++17** compatible compiler
+
+## Getting SFML
+
+This project vendors SFML as a Git submodule under `external/SFML`.
+
+### Clone with submodules (recommended)
+
+```bash
+git clone --recurse-submodules https://github.com/<your-user>/sfmlteste.git
+cd sfmlteste
+```
+
+### If you already cloned without submodules
+
+From the repository root, initialize and update the SFML submodule:
+
+```bash
+git submodule update --init --recursive
+```
+
+### Adding SFML as a submodule (for your own fork/new repo)
+
+From the root of your repository:
+
+```bash
+git submodule add https://github.com/SFML/SFML.git external/SFML
+git submodule update --init --recursive
+```
+
+This will place the SFML source in `external/SFML` and record it in `.gitmodules` so other developers can fetch it with `--recurse-submodules`.
 
 ## Installation
 
-### Install Dependencies (macOS)
+### Install build tools
 
-Run the installation script to install Homebrew (if not already installed), CMake, and SFML:
+Make sure you have CMake and a C++17-compatible compiler installed on your system.
 
-```bash
-chmod +x installSFML.sh
-./installSFML.sh
-```
-
-Or install manually:
-
-```bash
-brew install cmake
-brew install sfml
-```
+- **macOS**: `brew install cmake`
+- **Linux** (Debian/Ubuntu): `sudo apt-get install cmake g++`
+- **Windows**: Install CMake and a compiler (e.g. MSVC via Visual Studio or MinGW).
 
 ## Building and Running
 
-Use the provided `run.sh` script to build and run the application:
+Use CMake directly to configure and build the project. From the repository root:
 
-### Debug Build
-
-```bash
-./run.sh debug
-```
-
-### Release Build
+### Debug build
 
 ```bash
-./run.sh release
+mkdir -p build
+cd build
+cmake .. -DCMAKE_BUILD_TYPE=Debug
+cmake --build .
 ```
 
-### Manual Build
+### Release build
 
 ```bash
 mkdir -p build
 cd build
 cmake .. -DCMAKE_BUILD_TYPE=Release
 cmake --build .
-./sfml3-app
+```
+
+### Run the example
+
+From inside the `build` directory after a successful build:
+
+```bash
+./sfml3-app   # or `sfml3-app.exe` on Windows
 ```
 
 ## Project Structure
@@ -65,8 +90,8 @@ cmake --build .
 .
 ├── CMakeLists.txt    # CMake build configuration
 ├── main.cpp          # Main application source
-├── run.sh            # Build and run script
-├── installSFML.sh    # Dependency installation script
+├── external/
+│   └── SFML/         # SFML Git submodule
 ├── build/            # Build output directory (generated)
 └── README.md         # This file
 ```
