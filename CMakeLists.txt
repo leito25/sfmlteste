@@ -5,8 +5,8 @@ project(sfml3-app LANGUAGES CXX)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-include_directories(/opt/homebrew/include)
-link_directories(/opt/homebrew/lib)
+# Add SFML as a subdirectory (git submodule in external/SFML)
+add_subdirectory(external/SFML)
 
 add_executable(sfml3-app main.cpp)
 

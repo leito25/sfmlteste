@@ -1,6 +1,7 @@
 # Build directories
 build/
 out/
+.specstory/
 
 # Compiled executables
 sfml3-app
