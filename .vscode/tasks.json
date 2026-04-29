@@ -5,7 +5,26 @@
             "label": "Build and Run (Debug, macOS)",
             "type": "shell",
             "command": "./run.sh",
-            "args": ["debug"],
+            "args": [
+                "debug"
+            ],
+            "group": "build",
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "detail": "Build and run the application in debug mode on macOS"
+        },
+        {
+            "label": "Build and Run (Debug, Windows)",
+            "type": "shell",
+            "command": "cmd.exe",
+            "args": [
+                "/c",
+                "cmake -S . -B build -DCMAKE_BUILD_TYPE=Debug && cmake --build build --config Debug && build\\sfml3-app.exe"
+            ],
             "group": {
                 "kind": "build",
                 "isDefault": true
@@ -13,43 +32,42 @@
             "options": {
                 "cwd": "${workspaceFolder}"
             },
-            "problemMatcher": ["$gcc"],
-            "detail": "Build and run the application in debug mode on macOS"
-        },
-        {
-            "label": "Build and Run (Debug, Windows)",
-            "type": "shell",
-            "command": "cmd.exe",
-            "args": ["/c", "cmake -S . -B build -DCMAKE_BUILD_TYPE=Debug && cmake --build build --config Debug && build\\sfml3-app.exe"],
-            "group": "build",
-            "options": {
-                "cwd": "${workspaceFolder}"
-            },
-            "problemMatcher": ["$gcc"],
+            "problemMatcher": [
+                "$gcc"
+            ],
             "detail": "Build and run the application in debug mode on Windows"
         },
         {
             "label": "Build and Run (Release, macOS)",
             "type": "shell",
             "command": "./run.sh",
-            "args": ["release"],
+            "args": [
+                "release"
+            ],
             "group": "build",
             "options": {
                 "cwd": "${workspaceFolder}"
             },
-            "problemMatcher": ["$gcc"],
+            "problemMatcher": [
+                "$gcc"
+            ],
             "detail": "Build and run the application in release mode on macOS"
         },
         {
             "label": "Build and Run (Release, Windows)",
             "type": "shell",
             "command": "cmd.exe",
-            "args": ["/c", "cmake -S . -B build -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && build\\sfml3-app.exe"],
+            "args": [
+                "/c",
+                "cmake -S . -B build -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && build\\sfml3-app.exe"
+            ],
             "group": "build",
             "options": {
                 "cwd": "${workspaceFolder}"
             },
-            "problemMatcher": ["$gcc"],
+            "problemMatcher": [
+                "$gcc"
+            ],
             "detail": "Build and run the application in release mode on Windows"
         }
     ]
