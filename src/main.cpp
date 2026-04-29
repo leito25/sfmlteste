@@ -3,6 +3,13 @@
 
 int main()
 {
+    // Creation de fenetree
+}
+
+// SFML 3 Sample teste
+/*
+int main()
+{
     // Create a window
     sf::Window window(sf::VideoMode({800, 600}), "SFML Window");
 
@@ -24,3 +31,4 @@ int main()
 
     return 0;
 }
+*/
